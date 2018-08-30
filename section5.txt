@@ -1,0 +1,57 @@
+30
+Hive : Hadoop 전체에서 데이터를 쿼리하는 강려크하고 간단한 방법
+표준SQL쿼리 작성
+YARN 클러스터 기반으로 MapReduce / Tez 명령으로 SQL을 변환하여 작동
+OLAP 용 -> 방대한 데이터셋을 다룰때 효율적 -> 복잡한 쿼리 수행시 Pig or Spark사용
+HiveQL : MySQL과 매우 비슷
+
+
+31
+Hive 로 MovieLens data 분석
+
+32
+Hive 작동 원리
+Hive에서 데이터 가져오면서 메타스토어에 스키마 정의
+구조화된 관계형 데이터베이스 
+외부 테이블은 Hive가 소유권을 갖지 않음
+DROP 하면 데이터 유지되고 이동하지 않음
+다른 시스템과 데이터를 공유해야 하는 경우에 사용하며 쉽게 적용 가능
+
+Hivepartitioned(하이브 파티셔닝)
+빅데이터세트와 쿼리가 있으면 해당 데이터의 특정 파티션에 있는 경향, Hive에서 파티션을 지정하는 것이 매우 중요 할 수 있음(최적화)
+특정 파티션에 관련된 쿼리를 수행하는 경우 매우 강려크함
+Hive 는 일반적인 데이터 유형에만 국한되지 않음(string, int, ...)
+Hive prompt : hive (대화형 쿼리)
+hive -f /경로/쿼리.hql (세이브 쿼리 파일)
+JDBC, ODBC 서버를 포함, 연결 가능
+Thrift(절약) 서비스 사용 가능
+
+33
+하이브로 평균평점 높은 영화 찾기
+count() -> avg()
+10명이 넘는 영화로 제한
+
+34
+avgRatings view 만들기
+
+35
+관계형데이터베이스와 Hadoop 통합 -> sqoop
+MySQL = 무료 관계형 데이터베이스, 클러스터에 분산되어있지 않지만 모든것이 로컬이라 OLTP, 온라인 트랜잭션 처리에 적합
+Sqoop 작동방식 : 대형 데이터셋 처리
+데이터를 배포하는 강력한 방법
+MySQL / PostGres / whatever -> Mapper1,2,3,4 -> HDFS
+Hive 테이블을 관계형데이터베이스와 동기화 하여 유지하는 메커니즘
+Hive -> MySQL 내보내기 
+
+36
+mysql 설치 및 데이터셋 가져오기
+
+37
+Sqoop 사용하여 MySQL에서 HDFS / Hive로 데이터가져오기
+sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies -m 1 --hive-import
+
+38
+exported_movies -> MySQL instance & PostgresSQL 등으로 export 가능
+데이터웨어하우스 활용 가능
+
+

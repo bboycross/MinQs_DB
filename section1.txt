@@ -1,0 +1,51 @@
+범용 하드웨어로 구축된 컴퓨터 클러스터에서 매우 큰 데이터 세트의 분산 저장 및 분산 처리를 위한 오픈 소스 소프트웨어 플랫폼
+
+여러대 컴퓨터에서 작동하여 빅데이터를 실제로 분산처리
+
+
+Hadoop
+YARN
+Mapreduce
+Pig  
+
+Apache Ambari : 맨위 클러스터의 실제상태, 실행중인 응용프로그램 정보
+Mesos : 클러스터에서 리소스 관리할수 있는 방법
+Spark : 실제로 데이터 쿼리, MapReduce 처럼 쿼리 실행가능 / 프로그래밍. 
+
+Tez : 스파크와 비슷한 기술 사용, 
+Hbase : 클러스터의 데이터를 트랜잭션에 노출시키는 방법 / NoSQL DB 라고도 불림
+
+Strom : 스트리밍 데이터 실시간 처리
+
+Oozie : 하둡클러스터에서 수행해야되는 작업이있는 경우 일종의 일정으로 실행할 수 있는 작업으로 함께 스케줄링해줌
+
+Zookeeper : 클러스터의 모든것을 조정하는 기술 / 마스터노드 추적 
+
+Sqoop : Hadoop과 기존 DB간의 커넥터
+Flume : 웹로그 대규모 수집 및 전송, 클러스터에 안정적으로 전송
+Kafka : 웹서버클러스터에서 PC클러스터로부터  데이터 수집
+
+MySQL : 중앙 DB에서 결과를 저장하고 검색 
+Cassandra : 실시간 사용을 위해 데이터를 노출하여 웹 응용 프로그램을 작동 / 실시간으로 사용
+MongoDB : 
+클러스터와 통합될 수 있는 모든 DB
+
+Query Engines
+Drill : 다양한 NoSQL DB에서 작동하는 SQL 쿼리 작성 / HBase, Cassandra, MongoDB 연동 가능
+Hue : 대화식 쿼리 방법 / Ambari 역할 
+Phienix : SQL 스타일 쿼리 수행 / SQL Hadoop 이 아닌 DB를 관계형 DB 처럼 보이게 만들수 있다
+Presto : 
+Zeppelin : UI, 클러스터 상호작용
+
+
+
+// 1-4
+https://sundog-education.com/hadoop-materials/
+낮은 메모리상황 대처 등등 여러가지가 있음.
+
+
+
+
+
+
+
